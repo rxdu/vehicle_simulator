@@ -26,6 +26,15 @@ export GAZEBO_MODEL_PATH=$HOME/Workspace/catkin_ws/src/vehicle_simulator/vehicle
 
 # 2. Basic testing commands
 
+You can start a simulation with a drc_vehicle or drc_vehicle_xp900 in an empty world using the following commands:
+```
+$ roslaunch vehiclesim_gazebo drc_vehicle.launch
+```
+or
+```
+$ roslaunch vehiclesim_gazebo drc_vehicle_xp900.launch
+```
+
 Turn the steering wheel to the left:
 ```
 $ rostopic pub --once /drc_vehicle/hand_wheel/cmd std_msgs/Float64 '{ data : 3.14 }'
@@ -46,6 +55,7 @@ Turn the engine off:
 ```
 $ rostopic pub --once /drc_vehicle/key/cmd std_msgs/Int8 '{ data : 0 }'
 ```
+**Note**: You need to change the topic name "drc_vehicle" to "drc_vehicle_xp900" if you're using xp900 model.
 
 # 3. Issues and Solutions
 
